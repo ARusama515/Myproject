@@ -1,0 +1,11 @@
+# Use official MySQL image
+FROM mysql:8.0
+
+# Set environment variables for MySQL
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_DATABASE=myfyp
+ENV MYSQL_USER=root
+ENV MYSQL_PASSWORD=root
+
+# Copy initialization scripts (if any)
+COPY ./docker/mysql/init.sql /docker-entrypoint-initdb.d/
